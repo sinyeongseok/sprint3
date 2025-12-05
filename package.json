@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "bui;d": "npm install && npx prisma db push && npx prisma generate"
+    "build": "npm install && npx prisma db push && npx prisma generate"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.0.0",
