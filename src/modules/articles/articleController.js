@@ -2,14 +2,6 @@ import * as articleService from "./articleService.js";
 
 export const createArticle = async (req, res, next) => {
   try {
-    if (req.content === undefined || req.content.length === 0) {
-      return res.status(400).json({
-        success: false,
-        message: "게시글 내용을 입력해주세요.",
-        error: '필수 필드 "content" 누락.',
-      });
-    }
-
     const artcle = await articleService.createArticle(req.body);
 
     res.status(201).json({

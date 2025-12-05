@@ -2,14 +2,6 @@ import * as productService from "./productService.js";
 
 export const createProduct = async (req, res, next) => {
   try {
-    if (req.name === undefined || req.name.length === 0) {
-      return res.status(400).json({
-        success: false,
-        message: "상품의 이름을 입력해주세요.",
-        error: '필수 필드 "name" 누락.',
-      });
-    }
-
     const product = await productService.createProduct(req.body);
 
     return res.status(201).json({
